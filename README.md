@@ -1,9 +1,9 @@
 # stunning-learn
-学习资料整理
+- 学习资料整理
 
 ## 目录(Contents)
 
 - Git
-  - [Git Install](Git/Git Install.md)
+  - [Git Install](Git/git-install.md)
 - Java
 
