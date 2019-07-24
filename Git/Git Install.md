@@ -1,6 +1,6 @@
 # Windows系统下安装Git
 
-[TOC]
+- 主要介绍windows系统下Git的安装与配置。
 
 ## Git安装
 
