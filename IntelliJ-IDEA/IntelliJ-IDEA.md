@@ -47,7 +47,8 @@
 
 - 推荐字体下载地址
 
-  > 链接：https://pan.baidu.com/s/1zcE202rJRMAl4LdtgCPtKw 
+  > 链接：https://pan.baidu.com/s/1zcE202rJRMAl4LdtgCPtKw
+  >
   > 提取码：tv4h 
 
 ### 文件编码
