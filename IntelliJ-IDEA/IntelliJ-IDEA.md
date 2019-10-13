@@ -1,8 +1,10 @@
-# IntelliJ IDEA
+# IntelliJ IDEA 教程
 
-## 一、配置目录
+本文主要总结 IDEA 使用的重要知识点。
 
-- 系统用户目录下的 `config` 和 `system` 目录可以全部删除，重新启动 IntelliJ IDEA 会自动再生成一个全新的默认配置
+## 一、配置文件目录
+
+- 安装完成后，系统用户目录下的 `config` 和 `system` 目录可以全部删除，重新启动 IntelliJ IDEA 会自动再生成一个全新的默认配置
 
 - **推荐使用 IDEA 菜单中的 Help -> Edit Custom VM Options 和 Help -> Edit Custom Properties 来进行参数个性化配置**
 
@@ -20,7 +22,7 @@
   # 修改示例如下图
   ```
 
-![1570953552843](images/1570953552843.png)
+<img src="images/1570953552843.png" alt="1570953552843" align="center" />
 
 
 
@@ -79,4 +81,8 @@
 ### 编译方式
 
 [编译方式](https://github.com/judasn/IntelliJ-IDEA-Tutorial/blob/master/make-introduce.md)
+
+## 四、其他教程
+
+- [IntelliJ IDEA 简体中文专题教程](https://github.com/judasn/IntelliJ-IDEA-Tutorial)
 
