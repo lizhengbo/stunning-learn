@@ -828,13 +828,15 @@
 
 ![1573978204758](images/1573978204758.png)
 
-- 如上图所示，返回 `Server` 选项，将 `On 'Update' action` 选项改为 `Update classes and resources` ，这样就可以实现 **热部署** ；`On frame deactivation` 也可以修改为 `Update classes and resources` ，不过建议不修改。
+- 如上图所示，返回 `Server` 选项，将 `On 'Update' action` 选项改为 `Update classes and resources` ，这样就可以实现 **热部署** ；`On frame deactivation` 也可以修改为 `Update classes and resources` ，不过建议不修改。勾选 `Show dialog` 表示点击 `Update` 按钮时弹出提示框。
 
 > - `On 'Update' action` ：表示手工触发 update 动作的时候，IDEA 做什么。
 >
->   ![1573994381169](images/1573994381169.png)
+> ![1573994381169](images/1573994381169.png)
 >
->   ![1573994533042](images/1573994533042.png)
+> ![1573994533042](images/1573994533042.png)
+>
+> 
 >
 >   - 如上图1，箭头指向的就是手动更新按钮。点击后，弹出如上图2所示的弹出框，也可以在这里选择，默认选中配置的选项。
 >   - `Update resources` 更新静态资源文件，运行模式和调试模式都是立即生效。
