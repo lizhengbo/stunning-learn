@@ -306,6 +306,15 @@
 
 
 
+### 文件修改后让父文件夹也标注修改
+
+![1574336892716](C:/Users/lizhengbo/AppData/Roaming/Typora/typora-user-images/1574336892716.png)
+
+- 配置路径 `File | Settings | Version Control`
+- 如上图所示，勾选 `Show directories with changed descendants` 。
+
+
+
 
 ### 主题及主题字体
 
