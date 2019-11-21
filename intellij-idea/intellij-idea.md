@@ -506,6 +506,7 @@
 - 配置路径 `File | Settings | Editor | Code Style | Java | Code Generation`
 - 如上图1 所示，默认 IntelliJ IDEA 对于 Java 代码的单行注释是把注释的斜杠放在行数的最开头，这种注释风格不好看，可以改为上图2 所示的风格。设置方法如上图3 的 **标注2** 所示，取消勾选 `Line comment at first column` 并勾选 `Add a space at comment start` 。
 - 如上图3 的 **标注1** 所示，`Code Style` 配置可以拷贝，此处可以自定义自己的配置信息。
+- `Block comment at first column` 是设置 **代码块注释** 风格的，原理与行注释相同。
 
 
 
