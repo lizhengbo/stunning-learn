@@ -918,7 +918,9 @@ IntelliJ IDEA 教程
 > 
 >
 > - `On frame deactivation` ：表示 IDEA 失去焦点时，做什么；比如最小化 IDEA 窗口时。
-> - `Do nothing` 什么也不做，建议设置成 `Do nothing` ，IDEA 默认也是这个，因为通常情况下 IDEA 失去焦点的几率很大，每次失去焦点就自动触发 update ，耗费 CPU，导致电脑运行减慢。
+>
+>   - `Do nothing` 什么也不做，建议设置成 `Do nothing` ，IDEA 默认也是这个，因为通常情况下 IDEA 失去焦点的几率很大，每次失去焦点就自动触发 update ，耗费 CPU，导致电脑运行减慢。
+>
 >   - `Update resources` 同上
 >   - `Update classes and resources` 同上
 
