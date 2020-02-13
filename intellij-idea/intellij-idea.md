@@ -1,4 +1,4 @@
-# IntelliJ IDEA 教程
+IntelliJ IDEA 教程
 
 - 本文主要总结 IDEA 使用的重要知识点。
 - 本文使用的 IDEA 版本为 **2019.2.4 Ultimate Edition** 。
@@ -67,7 +67,7 @@
 
 ## 核心文件和目录介绍
 
-### 安装目录介绍
+### 1. 安装目录介绍
 
 ![1573371589309](images/1573371589309.png)
 
@@ -81,7 +81,7 @@
   - `Help | Edit Custom Properties`
   - `Help | Edit Custom VM Options`
 
-### 配置目录介绍
+### 2. 配置目录介绍
 
 ![1573371804184](images/1573371804184.png)
 
@@ -93,13 +93,13 @@
 
 
 
-### 自定义配置目录
+### 3. 自定义配置目录
 
 - 修改 `config` 和 `system` 目录位置
 
   ``` properties
   # 建议首次打开 IDEA 时，就修改 config 和 system 目录位置
-  # 在初始化页面 Configure | Edit Custom Properties 中进行修改
+  # 在主界面 Configure | Edit Custom Properties 中进行修改
   
   # 该属性主要用于指向 IntelliJ IDEA 的个性化配置目录，注意使用正斜杠
   idea.config.path=${user.home}/.IntelliJIdea/config
@@ -140,7 +140,7 @@
 
 ![1573370471339](images/1573370471339.png)
 
-- 如上2图所示，在开始页面，选择 `Configure | Edit Custom VM Options` 。
+- 如上2图所示，在主界面，选择 `Configure | Edit Custom VM Options` 。
 
 ![1573370284219](images/1573370284219.png)
 
@@ -208,7 +208,7 @@
 
 - 其他默认配置入口：
 
-  **开始页面** `Configure` 中的 `Settings` 和 `Structure For New Projects` 配置项，如下图所示：
+  **主界面** `Configure` 中的 `Settings` 和 `Structure For New Projects` 配置项，如下图所示：
 
   ![1573387507157](images/1573387507157.png)
 
@@ -219,7 +219,7 @@
 
 ### JDK
 
-#### 默认配置（全局配置）
+#### 1. 默认配置（全局配置）
 
 ![1573393410501](images/1573393410501.png)
 
@@ -228,7 +228,7 @@
 
 
 
-#### 项目配置
+#### 2. 项目配置
 
 ![1573393445652](images/1573393445652.png)
 
@@ -237,7 +237,7 @@
 
 
 
-#### SDKs 介绍
+#### 3. SDKs 介绍
 
 ![1573375964677](images/1573375964677.png)
 
@@ -247,7 +247,7 @@
 
 
 
-#### language level 介绍
+#### 4. language level 介绍
 
 ![1570981532564](images/1570981532564.png)
 
@@ -258,7 +258,7 @@
 
 
 
-#### Module 配置 SDK 和 language level
+#### 5. Module 配置 SDK 和 language level
 
 >  Project 中 每个 Module 用到的 `SDK` 和 `language level` 有可能是各不一样的，IntelliJ IDEA 对此也进行了支持。
 
@@ -286,9 +286,21 @@
 ![1573377482875](images/1573377482875.png)
 
 - 配置路径 `File | Settings | Build, Execution, Deployment | Build Tools | Maven | Importing`
-- `Import Maven projects automatically` IntelliJ IDEA 会实时监控项目的 `pom.xml` 文件，进行项目变动设置，即自动更新项目依赖包。
+- `Import Maven projects automatically` IntelliJ IDEA 会实时监控项目的 `pom.xml` 文件，进行项目变动设置，即自动更新项目依赖包，建议勾选。
 - `Automatically download` 在 Maven 导入依赖包的时候是否自动下载源码和文档。默认是没有勾选的，也不建议勾选。
 - `VM options for importer` 可以设置导入的 VM 参数。一般这个都不需要主动改，除非项目真的导入太慢了我们再增大此参数。
+
+
+
+### Maven离线模式
+
+![1575611828835](images/1575611828835.png)
+
+![1575611934915](images/1575611934915.png)
+
+- 配置路径 `File | Settings | Build, Execution, Deployment | Build Tools | Maven`
+- 如上图1 所示，勾选 `Work offline` 选项，开启离线模式。
+- 如上图2 所示，点击 `Toggle Offline Mode` 按钮，也可以开启离线模式。
 
 
 
@@ -426,6 +438,17 @@
 
 
 
+### 方法参数提示
+
+![1573825505826](images/1573825505826.png)
+
+![1573825849448](images/1573825849448.png)
+
+- 配置路径 `File | Settings | Editor | General | Code Completion`
+- 如上图1 所示，勾选 **标注1** 的 3个选项，在使用方法时，IDEA会自动显示方法参数提示；配合快捷键 `Ctrl + P` 的使用，可以查看方法的详细参数或选择同名不同参的方法，如上图2 所示。
+
+
+
 ### 过滤文件类型
 
 ![1573894897619](images/1573894897619.png)
@@ -465,26 +488,16 @@
 
 
 
-### 行号、方法线和形参名
+### 行号、方法线、形参名和空格符
 
-![1573824190580](images/1573824190580.png)
+![1574864307172](images/1574864307172.png)
 
 ![1573824684743](images/1573824684743.png)
 
 - 配置路径 `File | Settings | Editor | General | Appearance`
 - 如上图1 的 **标注1** ，勾选 `Show line numbers` 和 `Show method separators` 可以显示行号和方法线，方法线有助于区分方法，如上图2的 **标注1** 和 **标注2** 所示。
-- 如上图1 的 **标注2** ，取消勾选 `Show parameter name hints` 选项，IDEA 将取消方法形参名提示。如上图2 的 **标注3** 将不会显示。可以按个人喜好选择是否勾选。
-
-
-
-### 方法参数提示
-
-![1573825505826](images/1573825505826.png)
-
-![1573825849448](images/1573825849448.png)
-
-- 配置路径 `File | Settings | Editor | General | Code Completion`
-- 如上图1 所示，勾选 **标注1** 的 3个选项，在使用方法时，IDEA会自动显示方法参数提示；配合快捷键 `Ctrl + P` 的使用，可以查看方法的详细参数或选择同名不同参的方法，如上图2 所示。
+- 如上图1 的 **标注2** ，`Show whitespaces` 选项表示显示空格符，勾选后文件将显示空格符和Tab制表符。
+- 如上图1 的 **标注3** ，取消勾选 `Show parameter name hints` 选项，IDEA 将取消方法形参名提示。如上图2 的 **标注3** 将不会显示。可以按个人喜好选择是否勾选。
 
 
 
@@ -498,8 +511,9 @@
 
 - 配置路径 `File | Settings | Editor | General | Editor Tabs`
 - 在打开很多文件的时候，IntelliJ IDEA 默认是把所有打开的文件名 Tab 单行显示的。个人建议使用多行显示，多行效率比单行高，因为单行会隐藏超过界面部分 Tab，这样找文件不方便。如上图1 的 **标注1** 所示，取消勾选 `Show tabs in one rows` ，将单行显示模式改为多行模式，如上图2 和上图3 所示。
-- 如上图1 的 **标注2** 所示，设置最多可以打开的文件 **Tab个数** 。
-- 如上图1 的 **标注3** 所示，设置关闭当前 Tab页时，默认显示左边的 Tab页。
+- 如上图1 的 **标注2** 所示，选项 `Show file extension` 表示在 Tab 页中显示文件扩展名；
+- 如上图1 的 **标注3** 所示，设置最多可以打开的文件 **Tab个数** 。
+- 如上图1 的 **标注4** 所示，设置关闭当前 Tab页时，默认显示左边的 Tab页。
 
 
 
@@ -624,14 +638,38 @@
 
 
 
+### 添加文件模板
+
+> 当需要新建一个文件时，若发现右键 | New 中没有所需的文件格式，如FreeMarker、Velocity等文件类型，这时可以新建一个文件模板。
+
+![1575436704149](images/1575436704149.png)
+
+- 配置路径 `File | Settings | Editor | File and Code Templates`
+
+- 如上图 **标注1** 所示，点击 `+` 按钮，添加一个新的文件模板；
+
+  图示中的4个按钮功能如下：
+
+  - `Create Template` 创建一个文件代码模板。
+  - `Remove Template` 删除一个文件代码模板，预设模板是不允许删除的，只能删除预设之外的新增的。
+  - `Copy Template` 复制一个文件代码模板。
+  - `Reset To Default` 对被修改的预设文件代码模板，还原到默认状态。
+
+- 如上图 **标注2** 所示，`Name` 为模板名称；`Extension` 是模板后缀名；
+
+- 如上图 **标注3** 所示，此区域可以编辑模板内容；IntelliJ IDEA 的文件代码模板是可以使用 `Velocity Template Language (VTL)` 进行书写的，可以使用 `#if ... #end` 和 `#parse` 等 VTL 语法。自定义变量格式有两种：`$变量名` 或 `${变量名}` 。
+
+- 如上图 **标注4** 所示，勾选 `Enable Live Templates` 选项，可以使用动态变量填充模板；
 
 
-### 设置类导入个数
+
+### Java 类导入设置
 
 ![1573886552119](images/1573886552119.png)
 
 - 配置路径 `File | Settings | Editor | Code Style | Java | Imports`
 - 如上图所示，当 Java 类中导入的某个包下类超过这里设置的指定个数，就会换成用 `*` 号来代替。若不想用 `*` 替换，可以将个数设置的大一点，如 999 。
+- 如上图所示，`Insert imports for inner classes` 选项，表示允许导入内部类，建议勾选。
 
 
 
@@ -773,6 +811,23 @@
 
 
 
+### 背景图片
+
+![1575014710923](images/1575014710923.png)
+
+![1575190668208](images/1575190668208.png)
+
+- 配置路径 `File | Settings | Appearance & Behavior | Appearance`
+- 如上图1 所示，点击 `Background Image..` 按钮，弹出如上图2 所示的背景图片设置窗口。
+- 如上图2 **标注1** ，选择自定义背景图片。
+- 如上图2 **标注2** ，设置图片透明度。
+- 如上图2 **标注3** ，设置图片翻转转，分 **水平翻转** 和 **垂直翻转** 两种。
+- 如上图2 **标注4** ，设置图片填充方式。
+- 如上图2 **标注5** ，设置图片定位方式。
+- 如上图2 **标注6** ，`Editor and tools` 即编辑区和菜单栏部分；`Empty frame` 即 IDEA 主页面，这两部分可以分别设置不同的背景图片。
+
+
+
 ### 清除缓存和索引
 
 > IntelliJ IDEA 的缓存和索引主要是用来加快文件查询，从而加快各种查找、代码提示等操作的速度。但是，IntelliJ IDEA 的索引和缓存并不是一直会良好地支持 IntelliJ IDEA 的，在某些特殊条件下，IntelliJ IDEA 的缓存和索引文件也是会损坏的，比如断电、蓝屏引起的强制关机，当你重新打开 IntelliJ IDEA，基本上百分八十的可能 IntelliJ IDEA 都会报各种莫名其妙错误，甚至项目打不开，IntelliJ IDEA 主题还原成默认状态。也有一些即使没有断电、蓝屏，也会有莫名奇怪的问题的时候，也很有可能是 IntelliJ IDEA 缓存和索引出问题，这种情况还不少。遇到此类问题也不用过多担心，下面就来讲解如何解决。
@@ -848,17 +903,22 @@
 >
 > 
 >
->   - 如上图1，箭头指向的就是手动更新按钮。点击后，弹出如上图2所示的弹出框，也可以在这里选择，默认选中配置的选项。
->   - `Update resources` 更新静态资源文件，运行模式和调试模式都是立即生效。
->   - `Update classes and resources` 更新 Java 文件和静态资源文件。
->     - 运行模式下，修改静态资源文件立即生效；修改 Java 文件不立即生效，需要 `Redeploy` 才能生效。
->     - 调试模式下，修改 Java 文件和静态资源文件都立即生效。
->   - `Redeploy` 重新部署，只是把原来的 war 包删掉，不重启 Tomcat。
->   - `Restart server` 重启 Tomcat 。
+>   - **如上图1，箭头指向的就是手动更新按钮。点击后，弹出如上图2所示的弹出框，也可以在这里选择，默认选中配置的选项。**
+>
+>     - `Update resources` 更新静态资源文件，运行模式和调试模式都是立即生效。
+>
+>     - `Update classes and resources` 更新 Java 文件和静态资源文件。
+>       - 运行模式下，修改静态资源文件立即生效；修改 Java 文件不立即生效，需要 `Redeploy` 才能生效。
+>       - 调试模式下，修改 Java 文件和静态资源文件都立即生效。
+>
+>     - `Redeploy` 重新部署，只是把原来的 war 包删掉，不重启 Tomcat。
+>
+>     - `Restart server` 重启 Tomcat 。
+>
+> 
 >
 > - `On frame deactivation` ：表示 IDEA 失去焦点时，做什么；比如最小化 IDEA 窗口时。
->
->   - `Do nothing` 什么也不做，建议设置成 `Do nothing` ，IDEA 默认也是这个，因为通常情况下 IDEA 失去焦点的几率很大，每次失去焦点就自动触发 update ，耗费 CPU，导致电脑运行减慢。
+> - `Do nothing` 什么也不做，建议设置成 `Do nothing` ，IDEA 默认也是这个，因为通常情况下 IDEA 失去焦点的几率很大，每次失去焦点就自动触发 update ，耗费 CPU，导致电脑运行减慢。
 >   - `Update resources` 同上
 >   - `Update classes and resources` 同上
 
@@ -907,6 +967,77 @@
 
 
 
+### 代码缩进
+
+#### 1. 自动检测缩进
+
+![1574990885774](images/1574990885774.png)
+
+![1574991882169](images/1574991882169.png)
+
+- 配置路径 `File | Settings | Editor | Code Style`
+- 如上图1 **标注1** 所示，勾选 `Detect and use existing file indents for editing` ，表示打开文件时，自动检测并使用现有的文件缩进方式。如原有的缩进方式为Tab制表符缩进，那么即使已经改为空格缩进，也会按制表符缩进。如果需要统一缩进规则，建议取消勾选该选项。
+- 在 IDEA 窗口的 **右下方** 会显示当前文件的缩进方式，如上图2 所示的 `Tab*` ，鼠标悬浮在 `Tab*` 上显示当前文件的缩进方式是自动检测得到的。
+
+#### 2. 文件缩进切换
+
+![1574992464032](images/1574992464032.png)
+
+- 方式一：以上图为例，点击当前文件的缩进方式按钮，如上图中的 `Tab*` ，会弹出缩进选项框。
+  - `Indent New Lines with 4 Spaces` 在新行中使用 4空格缩进，原有的不变。
+  - `Reindent File with 4 Spaces` 使用 4空格重新缩进整个文件。
+  - `Configure Indents for XML...` 配置 XML 格式文件的缩进方式。
+  - `Disable Indents Detection for Project` 禁用项目的缩进检测。
+
+![1574993192983](images/1574993192983.png)
+
+- 方式二：如上图所示，点击菜单 `Edit | Convert Indents` ，弹出缩进方式切换选项。
+  - `To Spaces` 全部使用 **空格** 缩进。
+  - `To Tabs` 全部使用 **制表符** 缩进。
+- 方式三：代码格式化，使用快捷键 `Ctrl + Alt + L` 对代码进行格式化处理。
+
+#### 3. 设置统一缩进
+
+> 以 Java 代码为例，其他类型代码配置方式类似。
+
+![1574994107835](images/1574994107835.png)
+
+- 配置路径 `File | Settings | Editor | Code Style | Java`
+- `Use Tab character` 使用制表符缩进，默认不勾选。**IntelliJ IDEA 中所有的代码格式都默认使用空格缩进。**
+- `Tab size` 设置 Tab 键等于几个空格，默认为 4 。
+- `Indent` 设置缩进占几个空格，默认为 4 。
+- `Continuation indent` 设置连续缩进占几个空格，默认为 8 。
+- `Keep indents on empty lines` 空行是否使用缩进，默认不勾选，即空行不使用缩进。
+
+
+
+### 去掉 mybatis Mapper.xml 警告和背景色
+
+#### 1. 关闭 SQL 代码检测
+
+![1575554264776](images/1575554264776.png)
+
+- 配置路径 `File | Settings | Editor | Inspections | SQL`
+- 如上图所示，取消勾选 `No data sources configured` 和 `SQL dialect detection` 选项，可以去掉 **No data sources configure 警告** 和 **SQL dialect is not configured 警告** 。
+
+#### 2. 去掉 “注入语言” 的背景色
+
+![1575555146895](images/1575555146895.png)
+
+- 配置路径 `File | Settings | Editor | Color Scheme | General`
+- 如上图所示，打开 `Code` 页，选择 `Injected language fragment` ，取消勾选 `Background` 选项。
+
+
+
+### 输入引号或括号等符号包围选中内容
+
+![1576484882081](images/1576484882081.png)
+
+- 配置路径 `File | Settings | Editor | General | Smart Keys`
+- 如上图所示，勾选  `Surround selection on typing quote or brace` 选项，在选中内容后，再输入引号或括号等符号时，会自动包围选中内容，而不是覆盖选中内容。
+
+
+
 ## 快捷键
 
 ### 快捷键修改说明
@@ -930,6 +1061,29 @@
 ![1573484406777](images/1573484406777.png)
 
 - 此快捷键是用来复制并黏贴所选的内容的，但是黏贴的位置是补充在原来的位置后面，用起来不方便；修改后的效果为复制所选的行数完整内容。如上图1 为原快捷键设置，上图2 为修改后的快捷键设置。
+
+
+
+### 快速添加Maven依赖
+
+![1575444747966](images/1575444747966.png)
+
+- 在 `pom.xml` 文件中使用快捷键 `Alt + Insert` ，弹出 `Generate` 窗口。
+
+- 选择 `Dependency` 选项，弹出 jar 包搜索窗口，如下图所示：
+
+  ![1575445272085](images/1575445272085.png)
+
+  - 如上图 **标注1** 所示，输入 jar 包关键字，进行搜索。
+  - 如上图 **标注2** 所示，点击三角图标，有各 jar 包版本可供选择。
+
+- 选择 `Managed Dependency` 选项，弹出依赖选择框，其中的 jar 包都是父类依赖管理中的 jar 包。如下图所示：
+
+  ![1575446606206](images/1575446606206.png)
+
+- 选择 `Dependency Template` 选项，自动生成添加依赖模板，如下图所示：
+
+  ![1575446764692](images/1575446764692.png)
 
 
 
