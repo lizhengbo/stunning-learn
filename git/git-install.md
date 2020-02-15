@@ -17,7 +17,7 @@
 
 ![1563717280652](images/1563717280652.png)
 
-> - - [x] **Additional icons On the Desktop** 添加桌面快捷方式。
+> - - [x] **Additional icons | On the Desktop** 添加桌面快捷方式。
 
 ![1563715869154](images/1563715869154.png)
 
