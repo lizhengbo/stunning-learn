@@ -1172,6 +1172,27 @@ IntelliJ IDEA 教程
 
 
 
+### Free MyBatis plugin
+
+> 该插件主要是在mapper接口方法和mapper XML文件之间来回切换非常方便，极大的提高了开发效率。
+
+![1582548184736](images/1582548184736.png)
+
+- 配置路径 `File | Settings | Plugins`
+- 搜索 `Free MyBatis plugin` ，点击 `Install` 按钮进行安装。
+
+![1582548277824](images/1582548277824.png)
+
+- 安装完成，点击 `Restart IDE` 按钮，重启 IDEA 。
+
+![1582548840489](images/1582548840489.png)
+
+![1582548887473](images/1582548887473.png)
+
+- 如上图1、图2 所示，点击左边栏中的箭头即可直接在 Mapper 接口方法和 Mapper XML文件之间来回切换。
+
+
+
 ## 推荐教程
 
 - [IntelliJ IDEA 简体中文专题教程](https://github.com/judasn/IntelliJ-IDEA-Tutorial)
