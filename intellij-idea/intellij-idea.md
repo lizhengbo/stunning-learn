@@ -1055,6 +1055,7 @@ IntelliJ IDEA 教程
 ![1582451469596](images/1582451469596.png)
 
 - 如上图所示，`MainToolBarSettings` 表示工具栏设置位置，选择 `VSC Label` ，点击 `+` 按钮，再点击 `Add Action...`  按钮。
+  - `Add Separator` 为添加分割线按钮。
 
 ![1582451808599](images/1582451808599.png)
 
