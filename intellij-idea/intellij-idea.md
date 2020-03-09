@@ -469,6 +469,7 @@ IntelliJ IDEA 教程
 - 如上图标注 1 和 2 所示，默认 IntelliJ IDEA 是没有开启自动导包功能的，只会提示需要导入包，但不会自动导入。
   - 勾选 **标注1** 选项，IntelliJ IDEA 将在我们书写代码的时候自动帮我们优化导入的包，比如自动去掉一些没有用到的包。
   - 勾选 **标注2** 选项，IntelliJ IDEA 将在我们书写代码的时候自动帮我们导入需要用到的包。但是对于那些同名的包，还是需要手动 `Alt + Enter` 进行导入的，IntelliJ IDEA 目前还无法智能到替我们做判断。
+  - `Show import popup for` 中勾选 `static methods and fields` 开启导入静态变量
 
 
 
