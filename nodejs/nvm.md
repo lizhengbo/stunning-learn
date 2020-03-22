@@ -69,6 +69,9 @@
 - 如上图所示，分别添加 node 和 npm 镜像地址，保存即可。
 
   ```properties
+  #root为不同版本node的存储路径
+  #path为node的symlink路径
+  
   node_mirror: https://npm.taobao.org/mirrors/node/
   npm_mirror: https://npm.taobao.org/mirrors/npm/
   ```
