@@ -76,7 +76,7 @@
   npm_mirror: https://npm.taobao.org/mirrors/npm/
   ```
 
-- 对于 NPM，还可以使用 cnpm 代替 npm 命令。cnpm 安装命令如下所示：
+- 对于默认的 npm 命令，可以使用 cnpm 命令行工具代替。cnpm 安装命令如下：
 
   ```bash
   npm install -g cnpm --registry=https://registry.npm.taobao.org
@@ -116,7 +116,7 @@
 5. `nvm off` ：关闭 node 版本管理。
 6. `nvm proxy [url]` ：设置下载代理。不加可选参数url，显示当前代理。将url设置为none则移除代理。
 7. `nvm node_mirror [url]` ：设置 node 镜像。默认是 `https://nodejs.org/dist/` 。如果不写url，则使用默认url。设置后可至安装目录 settings.txt 文件查看，也可直接在该文件操作。
-8. `nvm npm_mirror [url]` ：设置npm镜像。默认是 `https://github.com/npm/cli/archive/` 。如果不写url，则使用默认url。设置后可至安装目录 settings.txt 文件查看，也可直接在该文件操作。
+8. `nvm npm_mirror [url]` ：设置 npm 镜像。默认是 `https://github.com/npm/cli/archive/` 。如果不写url，则使用默认url。设置后可至安装目录 settings.txt 文件查看，也可直接在该文件操作。
 9. `nvm uninstall <version>` ：卸载指定版本的 node。
 10. `nvm use [version] [arch]` ：使用指定版本的 node。可指定32/64位。
 11. `nvm root [path]` ：设置存储不同版本 node 的目录。如果未设置，默认使用当前目录。
