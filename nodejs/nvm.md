@@ -1,6 +1,6 @@
 # NVM 的安装及使用
 
-> ​		NVM（Node Version Manager）是非常好用的 Node 版本管理器，可以实现在同一台机器上同时安装多个版本的 Node，并可以灵活切换不同的 Node 版本。
+> NVM（Node Version Manager）是非常好用的 Node 版本管理器，可以实现在同一台机器上同时安装多个版本的 Node，并可以灵活切换不同的 Node 版本。
 
 
 
@@ -62,9 +62,9 @@
 
 ![1584865828541](images/1584865828541.png)
 
-- 如上图所示，在 NVM 的安装目录下找到 `settings.txt` 文件，找开并编辑。
+- 如上图所示，在 NVM 的安装目录下找到 `settings.txt` 文件，打开并编辑。
 
-![1584864334510](images/1584864334510.png)
+![1584872731249](images/1584872731249.png)
 
 - 如上图所示，分别添加 node 和 npm 镜像地址，保存即可。
 
@@ -112,8 +112,8 @@
 4. `nvm on` ：开启 node 版本管理。
 5. `nvm off` ：关闭 node 版本管理。
 6. `nvm proxy [url]` ：设置下载代理。不加可选参数url，显示当前代理。将url设置为none则移除代理。
-7. `nvm node_mirror [url]` ：设置 node 镜像。默认是https://nodejs.org/dist/。如果不写url，则使用默认url。设置后可至安装目录settings.txt文件查看，也可直接在该文件操作。
-8. `nvm npm_mirror [url]` ：设置npm镜像。https://github.com/npm/cli/archive/。如果不写url，则使用默认url。设置后可至安装目录settings.txt文件查看，也可直接在该文件操作。
+7. `nvm node_mirror [url]` ：设置 node 镜像。默认是 `https://nodejs.org/dist/` 。如果不写url，则使用默认url。设置后可至安装目录 settings.txt 文件查看，也可直接在该文件操作。
+8. `nvm npm_mirror [url]` ：设置npm镜像。默认是 `https://github.com/npm/cli/archive/` 。如果不写url，则使用默认url。设置后可至安装目录 settings.txt 文件查看，也可直接在该文件操作。
 9. `nvm uninstall <version>` ：卸载指定版本的 node。
 10. `nvm use [version] [arch]` ：使用指定版本的 node。可指定32/64位。
 11. `nvm root [path]` ：设置存储不同版本 node 的目录。如果未设置，默认使用当前目录。
