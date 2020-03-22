@@ -9,3 +9,6 @@
 - IntelliJ IDEA
   - [IntelliJ IDEA 教程](intellij-idea/intellij-idea.md)
 
+- Node.js
+  - [NVM 安装与使用](nodejs/nvm.md)
+
