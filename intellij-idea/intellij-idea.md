@@ -1210,6 +1210,30 @@ IntelliJ IDEA 教程
 
 
 
+### Translation
+
+> 翻译插件，可在IDEA中快速进行翻译。
+
+
+
+- 配置路径 `File | Settings | Plugins`
+- 搜索 `Translation` ，点击 `Install` 按钮进行安装。
+
+
+
+### Rainbow Brackets
+
+> 彩虹括号，可以实现配对括号相同颜色，并且实现选中区域代码高亮的功能。
+
+
+
+- 配置路径 `File | Settings | Plugins`
+- 搜索 `Rainbow Brackets` ，点击 `Install` 按钮进行安装。
+
+
+
+
+
 ## 推荐教程
 
 - [IntelliJ IDEA 简体中文专题教程](https://github.com/judasn/IntelliJ-IDEA-Tutorial)
