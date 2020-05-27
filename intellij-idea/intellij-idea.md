@@ -1147,7 +1147,10 @@ IntelliJ IDEA 教程
 
 ### 常用快捷键
 
+#### 查看类继承关系
 
+- `Ctrl + H` 可以看向上和向下的继承关系 [参考说明](https://blog.csdn.net/xiaofeilong2016/article/details/104102658)
+- `在指定类右键查看Diagrams` 既能看继承关系，也能看实现了哪些接口 [参考说明](https://blog.csdn.net/qq_36555038/article/details/97266502)
 
 
 
