@@ -1034,6 +1034,15 @@ IntelliJ IDEA 教程
 
 
 
+### 去除代码重复提醒
+
+![1609895036358](images/1609895036358.png)
+
+- 配置路径 `File | Settings | Editor | Inspections | General`
+- 如上图所示，取消勾选 `Duplicated code fragment` 选项，即可**去除代码重复提醒**。
+
+
+
 ### 输入引号或括号等符号包围选中内容
 
 ![1576484882081](images/1576484882081.png)
