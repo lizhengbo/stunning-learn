@@ -294,7 +294,7 @@ nginx -v
 
 #### 2.1 openssl 库
 
-> 参考 **源码编译安装** 部分的 [openssl 库][#24-openssl-库] 
+> 参考 **源码编译安装** 部分的 [openssl 库](#24-openssl-库) 
 
 ##### 2.1.1 检查
 
