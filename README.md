@@ -14,4 +14,5 @@
 
 - Nginx
   - [nginx 安装](nginx/nginx-install.md) 
-  - [nginx 配置](nginx/nginx-conf.md)
+  - [nginx 配置](nginx/nginx-conf.md) 
+
