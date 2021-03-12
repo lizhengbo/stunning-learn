@@ -294,45 +294,7 @@ nginx -v
 
 #### 2.1 openssl 库
 
-> 参考 **源码编译安装** 部分的 [openssl 库](#24-openssl-库) 
-
-##### 2.1.1 检查
-
-使用以下任一方式检查均可：
-
-```bash
-#1.查看 openssl 版本
-openssl version
-
-#若已安装，则输出以下版本信息：
-#OpenSSL 1.0.2k-fips  26 Jan 2017
-
-#===================================================================================
-
-#2.检查已安装的软件包，需包含 openssl 和 openssl-libs 包
-rpm -qa | grep openssl
-
-#若已安装，则输出以下软件包信息：
-#openssl-1.0.2k-8.el7.x86_64
-#openssl-libs-1.0.2k-8.el7.x86_64
-```
-
-##### 2.1.2 安装
-
-- 在线安装，安装命令如下：
-
-```bash
-sudo yum -y install openssl
-```
-
-- 离线安装，安装方法如下：
-
-将 [openssl 离线软件包][openssl] 上传到 `~/soft/openssl` 目录后，执行以下命令安装：
-
-```bash
-cd ~/soft/openssl
-sudo rpm -Uvh *.rpm --nodeps --force
-```
+> 参考 **一、源码编译安装** 的 [2.4 openssl 库](#24-openssl-库) 
 
 
 
