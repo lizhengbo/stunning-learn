@@ -1,14 +1,22 @@
-# Nginx 配置文件
+# Nginx 配置
+
+> - [nginx 官方文档][nginx docs] 
 
 
 
-``` nginx
+## 一、配置文件说明
+
+```nginx
 
 #...       #main块（全局块）
 
 events {   #events块
    #...
 }
+
+#引入其他配置文件
+#语境：any
+include /root/nginx/tcp.nginx.conf;
 
 http {    #http块
 
@@ -66,7 +74,7 @@ http {    #http块
     #简单配置反向代理
     #server {
     #    listen 8082;                          #监听的端口号
-    #    server_name localhost;                #监听地址
+    #    server_name localhost;                #
     #    location / {                          #斜杠（/）代表根目录
     #        #root html;                       #根目录
     #        proxy_pass http://127.0.0.1:8080; #转发地址
@@ -79,7 +87,7 @@ http {    #http块
     #根据访问的路径跳转到不同端口的服务中
     server {
         listen 8083;                          #监听的端口号
-        server_name localhost;                #监听地址
+        server_name localhost;                #设置虚拟服务器的名称
         location / {
             proxy_pass http://myserver2;
         }
@@ -120,7 +128,7 @@ http {    #http块
     #虚拟主机的配置
     server {
         listen 8082;             #监听端口
-        server_name localhost;   #监听地址
+        server_name localhost;   #
         location / {                       #对 "/" 启用反向代理
             proxy_pass http://myserver1;   #转发地址
     #        proxy_set_header Host $host;
@@ -164,3 +172,123 @@ stream {   #stream块，用于tcp转发配置；必须和events块、http块平�
 
 #================================================================================================
 ```
+
+
+
+## 二、配置示例
+
+### 1. http 代理配置
+
+> 语境：http
+
+```nginx
+server {
+    listen 8087;
+    server_name localhost;
+    location / {
+        proxy_pass http://192.168.142.142:8080;
+    }
+}
+
+server {
+    listen 8088;
+    server_name localhost;
+    location / {
+        proxy_pass http://192.168.142.142:8081;
+    }
+}
+
+server {
+    listen 8089;
+    server_name localhost;
+    location / {
+        proxy_pass http://192.168.142.142:8082;
+    }
+}
+
+upstream tomcat1 {
+    server 192.168.142.142:8080;
+    server 192.168.142.142:8081;
+    server 192.168.142.142:8082;
+}
+
+server {
+    listen 8081;
+    server_name localhost;
+    location / {
+        proxy_pass http://tomcat1;
+    }
+}
+```
+
+
+
+```nginx
+#根据不同的访问域名转发到不同的服务器
+#请求客户端的hosts文件中添加：192.168.142.141 www.tomcat7.com www.tomcat8.com www.tomcat9.com
+#nginx通过匹配请求中的"host"字段确定路由到哪个服务器；如果其值与任何服务器名称都不匹配，或者请求根本不包含此标头字段，则nginx会将请求路由到该端口的默认服务器；默认服务器是第一个服务器，也可以使用"default_server"指定；
+#localhost实际是无效的名称
+#server_name可以使用IP命名
+server {
+    listen 8087;
+    server_name www.tomcat7.com;
+    location / {
+        proxy_pass http://192.168.142.142:8080;
+    }
+}
+
+server {
+    listen 8087 default_server;
+    server_name www.tomcat8.com;
+    location / {
+        proxy_pass http://192.168.142.142:8081;
+    }
+}
+
+server {
+    listen 8087;
+    server_name www.tomcat9.com;
+    location / {
+        proxy_pass http://192.168.142.142:8082;
+    }
+}
+```
+
+
+
+### 2. tcp 代理配置
+
+> 语境：main
+
+```nginx
+stream {
+
+    upstream mysql1 {
+        server 101.37.16.186:3306;
+    }
+    server {
+        listen 33000;
+        proxy_connect_timeout 1s;
+        proxy_timeout 3s;
+        proxy_pass mysql1;
+    }
+
+    #配置多个
+    #upstream xxx {...}
+    #server {...}
+
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+[nginx docs]: http://nginx.org/en/docs/ "nginx 官方文档"
+

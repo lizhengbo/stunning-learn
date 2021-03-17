@@ -205,10 +205,11 @@ tar -zxvf nginx-1.18.0.tar.gz
 
 ```bash
 cd  ~/soft/nginx-1.18.0
-./configure --prefix=/home/admin/nginx
+./configure --prefix=/home/admin/nginx --with-stream
 
-#--prefix 参数：指定编译后的安装目录，必须使用绝对路径，安装过程中会自动创建；
-#--prefix 若不指定使用默认路径 /usr/local/nginx ；使用普通用户安装时最好另外指定安装目录；
+#--prefix参数：指定编译后的安装目录，必须使用绝对路径，安装过程中会自动创建；
+#--prefix：若不指定使用默认路径 /usr/local/nginx ；使用普通用户安装时最好另外指定安装目录；
+#--with-stream：添加stream模块，支持tcp代理，默认不添加；
 
 #编译完成后进行安装操作，执行以下命令：
 make && make install
