@@ -265,6 +265,7 @@ stream {
 
     upstream mysql1 {
         server 101.37.16.186:3306;
+        # server xxx.xxx.xxx.xxx; #配置多个
     }
     server {
         listen 33000;

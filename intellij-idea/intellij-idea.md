@@ -641,6 +641,17 @@ IntelliJ IDEA 教程
 
 
 
+- 代码折叠注释模板
+
+  ```java
+  // region $END$
+  // endregion
+  ```
+  
+  > Navigate | Custom Folding 或快捷键 `Ctrl + Alt + .` 查看折叠注释列表；
+
+
+
 ### 添加文件模板
 
 > 当需要新建一个文件时，若发现右键 | New 中没有所需的文件格式，如FreeMarker、Velocity等文件类型，这时可以新建一个文件模板。
@@ -1181,6 +1192,22 @@ IntelliJ IDEA 教程
 
 - `Ctrl + O` 重写父类方法
 - `Ctrl + I` 实现接口方法
+
+
+
+#### 3. 书签
+
+> F11 
+>
+> Ctrl + F11
+>
+> Shift + F11
+>
+> Ctrl + Shift + Num
+>
+> Ctrl + Num
+
+
 
 
 
