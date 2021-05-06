@@ -1197,17 +1197,15 @@ IntelliJ IDEA 教程
 
 #### 3. 书签
 
-> F11 
->
-> Ctrl + F11
->
-> Shift + F11
->
-> Ctrl + Shift + Num
->
-> Ctrl + Num
+- `F11` 创建/删除 **普通书签** 
+- `Ctrl + F11` 创建/删除 **数字/字母书签** 
+- `Shift + F11` 浏览所有书签
+- `Ctrl + Shift + Num` 创建/删除 **数字书签** 
+- `Ctrl + Num` 快速跳转到 **数字书签** 
 
-
+> 说明：
+>
+> Num 表示 0-9 的数字；
 
 
 
