@@ -395,12 +395,34 @@ mysqldump -uroot -p -d test_db test_table1 > test_table1_d.sql
 >
 > - 在 crontab 定时任务中生成的备份文件大小为0时，可能是在 crontab 里面无法识别到 mysqldump 命令，需要指定 mysqldump 命令的绝对路径；
 > - 使用命令 `which mysqldump` 获取 mysqldump 命令的绝对路径；
-> - 若备份数据库只需保留几天内的数据，可以使用以下命令删除多余文件：
 >
-> ```bash
-> #删除7天以前的备份文件
-> #find /path -mtime +7 -type f -name "dump*.sql" -exec rm -rf {} \; -- 不推荐使用
-> find /path -mtime +7 -type f -name "dump*.sql" | xargs rm -rf
+> - MySQL备份脚本示例：
+>
+> ```sh
+> #!/bin/sh
+> 
+> #user_name为数据库用户名
+> #user_passwd为数据库密码
+> #db_name为数据库实例名
+> #/admin/home/dump为备份文件存储目录
+> mysqldump -uuser_name -puser_passwd db_name > /admin/home/dump/db_name_`date +%Y%m%d%H%M%S`.sql
+> 
+> #备份文件名以前一天的日期命名
+> #mysqldump -uuser_name -puser_passwd db_name > /admin/home/dump/db_name_`date -d "-1 day" +%Y%m%d`.sql
+> 
+> #远程访问方式,添加-h参数,再加上远程IP地址
+> #mysqldump -h192.168.132.22 -uuser_name -puser_passwd db_name > /admin/home/dump/db_name_`date -d "-1 day" +%Y%m%d`.sql
+> 
+> #删除7天以前的数据库备份文件
+> #find /admin/home/dump -mtime +7 -name "db_name_*.sql" -exec rm -rf {} \; #不推荐使用
+> find /admin/home/dump -mtime +7 -name "db_name_*.sql" | xargs rm -rf
+> 
+> #上述内容写入备份脚本文件dump.sh
+> 
+> #设置crontab定时任务,每天1点备份
+> #crontab -e
+> #>/dev/null 2>&1 : 丢弃标准输出和错误输出
+> #0 1 * * * /admin/home/dump/dump.sh > /dev/null 2>&1
 > ```
 
 
