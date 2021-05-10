@@ -1,26 +1,35 @@
 # NVM 的安装及使用
 
-> NVM（Node Version Manager）是非常好用的 Node 版本管理器，可以实现在同一台机器上同时安装多个版本的 Node，并可以灵活切换不同的 Node 版本。
+> - NVM（Node Version Manager）是非常好用的 Node 版本管理器，可以实现在同一台机器上同时安装多个版本的 Node，并可以灵活切换不同的 Node 版本。
+>
+> - Windows 下的 NVM 官方网址：https://github.com/coreybutler/nvm-windows 。
 
 
 
-## Windows 下安装 NVM
+## 一、Windows 下安装 NVM
 
-> - 如果已经单独安装了 Node，建议先卸载 Node，避免某些莫名其妙的问题。
-> - 官方下载链接：[nvm-windows]( https://github.com/coreybutler/nvm-windows/releases )，选择下载 **nvm-setup.zip** 安装包。
+> - 如果已经单独安装了 Node，**建议先卸载 Node**，避免某些莫名其妙的问题。
+> - 官方下载链接：[nvm-windows](https://github.com/coreybutler/nvm-windows/releases)，选择下载 **nvm-setup.zip** 安装包；本文使用的版本为 `1.1.7` 。
+>   - **nvm-noinstall.zip** ：绿色免安装版，但使用时需进行配置；
+>   - **nvm-setup.zip** ：安装版，推荐使用；
+>   - **Source code(zip) ** ：zip 压缩的源码；
+>   - **Source code(tar.gz)** ：tar.gz 压缩的源码，一般用于 *nix 系统；
+
+
+
+- 解压 zip 安装包，双击 **nvm-setup.exe** 安装文件，开始安装；
 
 ![1584861597750](images/1584861597750.png)
 
-- 解压zip安装包，双击 **nvm-setup.exe** 安装文件，开始安装；
 - 选择 `I accept the agreement` ，点击 `Next` 按钮。
 
 ![1584865478178](images/1584865478178.png)
 
-- 配置安装路径；**注意路径不要包含空格及中文** ，点击 `Next` 按钮。
+- 选择 NVM 安装路径；**注意路径不要包含空格及中文** ，点击 `Next` 按钮。
 
 ![1584865528598](images/1584865528598.png)
 
-- 配置 node 的 symlink 文件夹位置，symlink 的作用同快捷方式；**注意路径不要包含空格及中文** ，点击 `Next` 按钮。
+- 选择 Node.js 使用版本的 symlink 路径，symlink 相当于快捷方式；**注意路径不要包含空格及中文** ，点击 `Next` 按钮。
 
 ![1584865574034](images/1584865574034.png)
 
@@ -30,13 +39,15 @@
 
 - 点击 `Finish` 完成安装。
 
+
+
+- 验证是否安装成功，如下图所示，在 CMD 命令行窗口中执行 `nvm` 命令，显示如下结果，表示安装成功。
+
 ![1584862913899](images/1584862913899.png)
 
-- 如上图所示，在 CMD 命令行窗口中执行 `nvm` 命令，显示结果如上所示，表示安装成功。
 
 
-
-## 检查环境变量
+## 二、检查环境变量
 
 > 最新版本的 NVM 会自动配置环境变量，这里只需检查环境变量是否已配置；若未配置再手动配置即可。
 
@@ -44,7 +55,7 @@
 
 - 在用户变量和系统变量中均添加 `NVM_HOME` 和 `NVM_SYMLINK` 变量。
   - `NVM_HOME` 为 NVM 安装路径；
-  - `NVM_SYMLINK` 为 node 的 symlink 路径。
+  - `NVM_SYMLINK` 为当前使用版本的 Node.js 的路径。
 
 ![1584863313539](images/1584863313539.png)
 
@@ -56,7 +67,7 @@
 
 
 
-## 配置 Node 和 NPM 下载源
+## 三、配置 Node 和 NPM 下载源
 
 > 由于在国内连接国外的服务器会比较慢，为了加快下载速度，可以将下载源更换成淘宝镜像。
 
@@ -69,8 +80,8 @@
 - 如上图所示，分别添加 node 和 npm 镜像地址，保存即可。
 
   ```properties
-  #root为不同版本node的存储路径
-  #path为node的symlink路径
+  #root：不同版本node的安装路径
+  #path：当前使用的node的symlink路径
   
   node_mirror: https://npm.taobao.org/mirrors/node/
   npm_mirror: https://npm.taobao.org/mirrors/npm/
@@ -84,33 +95,116 @@
 
 
 
-## 安装或管理 Node 版本
+## 四、安装或管理 Node 版本
 
-![1584865958839](images/1584865958839.png)
+### 4.1 列出所有可安装的 Node 版本
 
-- `nvm list available` ：查看所有可安装的 node 版本；
+```bash
+nvm list available
 
-![1584866055357](images/1584866055357.png)
+#|   CURRENT    |     LTS      |  OLD STABLE  | OLD UNSTABLE |
+#|--------------|--------------|--------------|--------------|
+#|    16.1.0    |   14.16.1    |   0.12.18    |   0.11.16    |
+#|    16.0.0    |   14.16.0    |   0.12.17    |   0.11.15    |
+#|   15.14.0    |   14.15.5    |   0.12.16    |   0.11.14    |
+#|   15.13.0    |   14.15.4    |   0.12.15    |   0.11.13    |
+#|   15.12.0    |   14.15.3    |   0.12.14    |   0.11.12    |
+#|   15.11.0    |   14.15.2    |   0.12.13    |   0.11.11    |
+#|   15.10.0    |   14.15.1    |   0.12.12    |   0.11.10    |
+#|    15.9.0    |   14.15.0    |   0.12.11    |    0.11.9    |
+#|    15.8.0    |   12.22.1    |   0.12.10    |    0.11.8    |
+#|    15.7.0    |   12.22.0    |    0.12.9    |    0.11.7    |
+#|    15.6.0    |   12.21.0    |    0.12.8    |    0.11.6    |
+#|    15.5.1    |   12.20.2    |    0.12.7    |    0.11.5    |
+#|    15.5.0    |   12.20.1    |    0.12.6    |    0.11.4    |
+#|    15.4.0    |   12.20.0    |    0.12.5    |    0.11.3    |
+#|    15.3.0    |   12.19.1    |    0.12.4    |    0.11.2    |
+#|    15.2.1    |   12.19.0    |    0.12.3    |    0.11.1    |
+#|    15.2.0    |   12.18.4    |    0.12.2    |    0.11.0    |
+#|    15.1.0    |   12.18.3    |    0.12.1    |    0.9.12    |
+#|    15.0.1    |   12.18.2    |    0.12.0    |    0.9.11    |
+#|    15.0.0    |   12.18.1    |   0.10.48    |    0.9.10    |
+#
+#This is a partial list. For a complete list, visit https://nodejs.org/download/release
 
-- `nvm install <version>` ：安装指定版本的 node ；
-
-![1584866737497](images/1584866737497.png)
-
-- `nvm use <version>` ：切换并使用指定版本的 node ；
-- `node -v` ：查看当前使用的 node 版本；
-- `npm -v` ：查看当前使用的 npm 版本；
-- `nvm list` ：查看本地已安装的 node 版本，前面带 `*` 号的表示当前使用的 node 版本；
-
-![1584866997209](images/1584866997209.png)
-
-- `nvm uninstall <version>` ：卸载指定版本的 node ;
+# CURRENT 最新发布版
+# LTS 长期支持版，推荐使用
+```
 
 
 
-## NVM 命令
+### 4.2 安装指定版本的 Node
 
-1. `nvm arch` ：显示node是运行在32位还是64位。
-2. `nvm install <version> [arch]` ：安装node， version是特定版本也可以是最新稳定版本latest。可选参数 arch 指定安装32位还是64位版本，默认是系统位数。可以添加 --insecure 绕过远程服务器的SSL。
+```bash
+#语法: nvm install <version>
+nvm install 14.16.1
+
+#Downloading node.js version 14.16.1 (64-bit)...
+#Complete
+#Creating D:\nvm\temp
+#
+#Downloading npm version 6.14.12... Complete
+#Installing npm v6.14.12...
+#
+#Installation complete. If you want to use this version, type
+#
+#nvm use 14.16.1
+```
+
+
+
+### 4.3 使用指定版本的 Node
+
+```bash
+#语法: nvm use <version>
+nvm use 14.16.1
+
+#Now using node v14.16.1 (64-bit)
+```
+
+
+
+### 4.4 查看本地已安装的 node 版本
+
+```bash
+nvm list
+
+#  * 14.16.1 (Currently using 64-bit executable)
+
+#前面带*号的表示当前使用的node版本
+
+#===============================================================
+
+#查看当前使用的 node 版本
+node -v
+
+#v14.16.1
+
+#===============================================================
+
+#查看当前使用的 npm 版本
+npm -v
+
+#6.14.12
+```
+
+
+
+### 4.5 卸载指定版本的 Node
+
+```bash
+#语法: nvm uninstall <version>
+nvm uninstall 14.16.1
+
+#Uninstalling node v14.16.1... done
+```
+
+
+
+## 五、NVM 命令
+
+1. `nvm arch [32|64]` ：显示node是运行在32位还是64位模式。指定32或64来覆盖默认体系结构。
+2. `nvm install <version> [arch]` ：安装指定版本的node， 可选参数 arch 指定安装32位还是64位版本，默认是系统位数。可以添加 --insecure 绕过远程服务器的SSL。
 3. `nvm list [available]` ：显示已安装的列表。可选参数 available，显示可安装的所有版本。list 可简化为ls 。
 4. `nvm on` ：开启 node 版本管理。
 5. `nvm off` ：关闭 node 版本管理。
@@ -124,7 +218,7 @@
 
 
 
-## 配置 Node 环境变量
+## 六、配置 Node 环境变量
 
 ![1584868732012](images/1584868732012.png)
 
@@ -144,4 +238,4 @@
 
 ![1584869414304](images/1584869414304.png)
 
-- 如上图所示，重新打开 CMD 窗口，再次执行 test.js 文件，输出正常。
+- 如上图所示，**重新打开 CMD 窗口**，再次执行 test.js 文件，输出正常。
