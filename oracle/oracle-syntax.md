@@ -23,7 +23,7 @@ alter table EVI_DATA_MAIN enable row movement;
 alter table EVI_DATA_MAIN shrink space;
 ```
 
-> 注：删除大表数据时最好用TRUNCATE,TRUNCATE会重新设置高水位线和所有的索引；
+> 注：删除大表数据时最好用TRUNCATE，TRUNCATE会重新设置高水位线和所有的索引；
 
 
 
