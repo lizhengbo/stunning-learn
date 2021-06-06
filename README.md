@@ -13,7 +13,7 @@
   - [nginx 安装](nginx/nginx-install.md) 
   - [nginx 配置](nginx/nginx-conf.md) 
 - MySQL
-  - [MySQL 语法](mysql/mysql-syntax.md)
+  - [MySQL 语法](mysql/mysql-syntax.md) 
 
 - Oracle
-  - [Oracle 语法](oracle/oracle-syntax.md)
+  - [Oracle 语法](oracle/oracle-syntax.md) 
